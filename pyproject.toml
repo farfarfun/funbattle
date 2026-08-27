@@ -1,6 +1,6 @@
 [project]
 name = "notebattle"
-version = "0.0.6"
+version = "0.0.7"
 description = "notebattle"
 readme = "README.md"
 requires-python = ">=3.10"
