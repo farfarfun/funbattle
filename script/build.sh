@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-name=notekeras
+name=funbattle
 echo $name
 
 if [ "push" = "push" ]; then
