@@ -7,7 +7,7 @@ requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "牛哥", email = "farfarfun@qq.com" }]
-dependencies = ["tqdm"]
+dependencies = ["tqdm>=4.60"]
 
 [dependency-groups]
 dev = ["pytest>=8"]
@@ -17,4 +17,4 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["funbattle"]
+packages = ["src/funbattle"]
