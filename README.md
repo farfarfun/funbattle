@@ -11,11 +11,23 @@ pip install funbattle
 ## 示例
 
 ```python
-import funbattle.battles.datafountain.bt557
+from importlib import import_module
+
+import funbattle
+
+module = import_module("funbattle.battles.datafountain.bt557")
+print(f"{funbattle.__name__}: {module.__name__}")
 ```
 
-各赛事目录下的代码是针对具体比赛数据集编写的一次性脚本，不构成通用 API，
-使用前请先阅读对应目录下的说明。
+仓库目前发布的是赛事代码的可导入归档，不提供通用竞赛 API；示例只验证已归档
+的 `bt557` 入口可以导入。赛事数据集和一次性脚本不随此包发布，新增赛事时应在
+对应目录补充入口说明和可运行示例。
+
+### 从 `notebattle` 迁移
+
+包名和导入名已从 `notebattle` 改为 `funbattle`。旧 PyPI 包的最后版本是
+`notebattle 0.0.6`；新项目使用 `pip install funbattle` 和 `import funbattle`。
+旧包由原发布者维护，当前仓库不冒充或覆盖其发布权限。
 
 ## 关于 farfarfun
 

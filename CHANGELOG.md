@@ -11,8 +11,9 @@
   自动 `git pull`/`git commit`/`git push`，发布改走 `funbuild`。
 - **破坏性变更**：import 名与 PyPI 包名从 `notebattle` 改为 `funbattle`，
   与仓库名保持一致。原 `import notebattle` / `pip install notebattle` 需切换为
-  `import funbattle` / `pip install funbattle`。旧 `notebattle` 包将发布一个最终
-  版本转发说明（由仓库所有者后续处理）。
+  `import funbattle` / `pip install funbattle`。PyPI 上可查到的旧包最终版本为
+  `notebattle 0.0.6`；该包属于原发布者账号，本仓库没有权限发布其转发版本。
+  迁移完成后请使用新包名，不要继续依赖旧包。
 
 ### 修复
 

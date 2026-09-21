@@ -1,21 +1,23 @@
-# NOTE: This test is intentionally minimal.
-#
-# funbattle's top-level package and its `battles` / `battles.datafountain`
-# packages all have empty __init__.py files, so importing them has no
-# side effects. Deeper submodules (e.g. `battles.datafountain.bt557`)
-# are competition-specific scratch code and are not exercised here.
-import funbattle
-import funbattle.battles
-import funbattle.battles.datafountain
+from importlib import import_module
+
+import pytest
+
+PUBLIC_MODULES = (
+    "funbattle",
+    "funbattle.battles",
+    "funbattle.battles.datafountain",
+    "funbattle.battles.datafountain.bt557",
+    "funbattle.battles.datafountain.bt557.evalution",
+    "funbattle.battles.datafountain.bt557.model",
+    "funbattle.battles.datafountain.bt557.utils",
+)
 
 
-def test_import_funbattle():
-    assert funbattle is not None
+@pytest.mark.parametrize("module_name", PUBLIC_MODULES)
+def test_import_public_module(module_name):
+    assert import_module(module_name).__name__ == module_name
 
 
-def test_import_funbattle_battles():
-    assert funbattle.battles is not None
-
-
-def test_import_funbattle_battles_datafountain():
-    assert funbattle.battles.datafountain is not None
+def test_missing_competition_module_is_not_silently_provided():
+    with pytest.raises(ModuleNotFoundError):
+        import_module("funbattle.battles.missing_competition")
