@@ -4,8 +4,10 @@
 
 ## 安装
 
+项目尚未发布到 PyPI。克隆仓库后，在仓库根目录执行：
+
 ```bash
-pip install funbattle
+pip install .
 ```
 
 ## 示例
@@ -26,7 +28,7 @@ print(f"{funbattle.__name__}: {module.__name__}")
 ### 从 `notebattle` 迁移
 
 包名和导入名已从 `notebattle` 改为 `funbattle`。旧 PyPI 包的最后版本是
-`notebattle 0.0.6`；新项目使用 `pip install funbattle` 和 `import funbattle`。
+`notebattle 0.0.6`；新项目使用 `pip install .` 和 `import funbattle`。
 旧包由原发布者维护，当前仓库不冒充或覆盖其发布权限。
 
 ## 关于 farfarfun
