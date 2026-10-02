@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.0.8
+
+### 变更
+
+- README 只描述当前状态，移除历史改名说明章节；安装入口保持为本地
+  `pip install .`，待包正式发布到 PyPI 后再改为 `pip install funbattle`。
+- 仓库 homepage 清空，不再指向非本组织的 PyPI 包。
+
 ## 0.0.7
 
 ### 变更

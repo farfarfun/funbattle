@@ -25,12 +25,6 @@ print(f"{funbattle.__name__}: {module.__name__}")
 的 `bt557` 入口可以导入。赛事数据集和一次性脚本不随此包发布，新增赛事时应在
 对应目录补充入口说明和可运行示例。
 
-### 从 `notebattle` 迁移
-
-包名和导入名已从 `notebattle` 改为 `funbattle`。旧 PyPI 包的最后版本是
-`notebattle 0.0.6`；新项目使用 `pip install .` 和 `import funbattle`。
-旧包由原发布者维护，当前仓库不冒充或覆盖其发布权限。
-
 ## 关于 farfarfun
 
 [farfarfun](https://github.com/farfarfun) 是一个专注于实用工具库的开源组织，

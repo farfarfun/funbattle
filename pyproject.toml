@@ -1,7 +1,7 @@
 [project]
 name = "funbattle"
-version = "0.0.7"
-description = "funbattle"
+version = "0.0.8"
+description = "数据竞赛代码归档：按赛事 ID 分目录存放 DataFountain 等比赛的可导入入口"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
