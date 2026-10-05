@@ -1,16 +1,28 @@
 [project]
 name = "funbattle"
 version = "0.0.8"
-description = "数据竞赛代码归档：按赛事 ID 分目录存放 DataFountain 等比赛的可导入入口"
+description = "数据竞赛代码骨架：按平台与赛事 ID 分目录预留可导入的包结构，当前仅有 DataFountain 557 的空目录"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]
+keywords = ["data-competition", "datafountain", "scaffold"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
 authors = [{ name = "牛哥", email = "farfarfun@qq.com" }]
-dependencies = ["tqdm>=4.60"]
+dependencies = []
+
+[project.urls]
+Organization = "https://github.com/farfarfun"
+Repository = "https://github.com/farfarfun/funbattle"
+Releases = "https://github.com/farfarfun/funbattle/releases"
 
 [dependency-groups]
-dev = ["pytest>=8"]
+dev = ["pytest>=8", "ruff>=0.11.0"]
 
 [build-system]
 requires = ["hatchling"]
@@ -18,3 +30,9 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/funbattle"]
+
+[tool.ruff]
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

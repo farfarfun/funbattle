@@ -1,14 +1,34 @@
 # CHANGELOG
 
-## 0.0.8
+> `funbattle` 尚未发布到 PyPI（`https://pypi.org/pypi/funbattle/json` 返回 404），
+> 下列各段落记录的都是仓库内的改动，均未对应任何已发布的分发包。
+
+## 未发布
 
 ### 变更
 
-- README 只描述当前状态，移除历史改名说明章节；安装入口保持为本地
-  `pip install .`，待包正式发布到 PyPI 后再改为 `pip install funbattle`。
+- README 改为如实描述当前状态：本仓库只有目录骨架、没有实现代码，并补充 uv
+  前置要求、`uv sync` / `uv pip install .` 安装方式与「开发」章节的测试、静态检查命令。
+- `pyproject.toml` 的 `description` 同步改为「代码骨架」口径，与 GitHub 仓库描述一致。
+- 补充 `[project.urls]`、`keywords`、`classifiers` 打包元信息。
+- 开发依赖组补充 `ruff`，新增 `[tool.ruff] target-version = "py310"` 与
+  `[tool.pytest.ini_options] testpaths`。
+
+### 修复
+
+- 移除运行时依赖 `tqdm`：仓库内没有任何代码引用它，声明它会让安装者白装一个用不到的包。
+  后续真正用到时再按「依赖要写版本下限」的规范加回。
+- 不再跟踪 `uv.lock`（`.gitignore` 已忽略），与规范「不提交 `uv.lock`」一致；
+  此前 0.0.7 段落记录的「提交 `uv.lock`」已作废。
+
+## 0.0.8（未发布）
+
+### 变更
+
+- README 只描述当前状态，移除历史改名说明章节。
 - 仓库 homepage 清空，不再指向非本组织的 PyPI 包。
 
-## 0.0.7
+## 0.0.7（未发布）
 
 ### 变更
 
@@ -17,13 +37,10 @@
 - 依赖 `tqdm` 补充版本下限（`>=4.60.0`）。
 - 移除 `script/build.sh` 中基于 `setup.py`/`twine` 的手写发布流程，以及脚本内
   自动 `git pull`/`git commit`/`git push`，发布改走 `funbuild`。
-- **破坏性变更**：import 名与 PyPI 包名从 `notebattle` 改为 `funbattle`，
-  与仓库名保持一致。原 `import notebattle` / `pip install notebattle` 需切换为
-  `import funbattle` / `pip install funbattle`。PyPI 上可查到的旧包最终版本为
-  `notebattle 0.0.6`；该包属于原发布者账号，本仓库没有权限发布其转发版本。
-  迁移完成后请使用新包名，不要继续依赖旧包。
+- **破坏性变更**：import 名与分发包名从 `notebattle` 改为 `funbattle`，与仓库名保持一致。
+  原 `import notebattle` / `pip install notebattle` 需切换为 `import funbattle`。
+  PyPI 上旧包 `notebattle` 停在 0.0.6，不再接收更新，也不会发布转发版本。
 
 ### 修复
 
-- 提交 `uv.lock` 以保证可复现构建。
 - `.gitignore` 补充 `*.db`、`*.rar`、`.run/`、`logs/`、`.idea/`、`.vscode/`。
