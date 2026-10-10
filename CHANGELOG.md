@@ -16,6 +16,9 @@
 
 ### 修复
 
+- 为已发布的 `notebattle` 0.0.6 提供最终转发版本的发布源码：该版本依赖
+  `funbattle>=0.0.8`，并在 README 中说明从旧分发名和 import 名迁移的路径。发布顺序为先
+  发布 `funbattle`，再从 `legacy/notebattle` 发布 `notebattle` 0.0.7。
 - 移除运行时依赖 `tqdm`：仓库内没有任何代码引用它，声明它会让安装者白装一个用不到的包。
   后续真正用到时再按「依赖要写版本下限」的规范加回。
 - 不再跟踪 `uv.lock`（`.gitignore` 已忽略），与规范「不提交 `uv.lock`」一致；
