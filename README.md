@@ -25,7 +25,13 @@ uv sync                 # 创建虚拟环境并安装运行时依赖与开发依
 只想把本仓库装进已有环境时：
 
 ```bash
-uv pip install .        # 可编辑安装：uv pip install -e .
+uv pip install .
+```
+
+开发时需要可编辑安装则使用：
+
+```bash
+uv pip install -e .
 ```
 
 ## 示例
