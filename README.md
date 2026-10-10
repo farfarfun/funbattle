@@ -34,6 +34,21 @@ uv pip install .
 uv pip install -e .
 ```
 
+## 从 notebattle 迁移
+
+`notebattle` 已弃用。请将依赖声明中的 `notebattle` 替换为 `funbattle`，并把
+`import notebattle` 替换为 `import funbattle`：
+
+```bash
+uv pip uninstall notebattle
+uv pip install funbattle
+```
+
+仓库中的 [`legacy/notebattle`](legacy/notebattle) 是旧分发包最后一个转发版本的发布
+源码。发布 `funbattle` 后，维护者应从该目录发布 `notebattle` 0.0.7；它只依赖
+`funbattle>=0.0.8`，不再包含项目实现。该版本的 PyPI 与 GitHub Release 说明应链接至
+本节，告知使用者完成上述迁移。
+
 ## 示例
 
 包内尚无实现代码，当前唯一能演示的就是目录骨架可被正常导入：
